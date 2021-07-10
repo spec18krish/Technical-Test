@@ -1,0 +1,13 @@
+C:\Vasanth\Voyager\Voyager\bin\Debug\PointOfSale_UI.exe.config
+C:\Vasanth\Voyager\Voyager\bin\Debug\PointOfSale_UI.exe
+C:\Vasanth\Voyager\Voyager\bin\Debug\PointOfSale_UI.pdb
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.csprojAssemblyReference.cache
+C:\Vasanth\Voyager\Voyager\obj\Debug\Voyager.Form1.resources
+C:\Vasanth\Voyager\Voyager\obj\Debug\Voyager.Properties.Resources.resources
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.csproj.GenerateResource.cache
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.csproj.CoreCompileInputs.cache
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.exe
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.pdb
+C:\Vasanth\Voyager\Voyager\bin\Debug\PointOfSale.dll
+C:\Vasanth\Voyager\Voyager\bin\Debug\PointOfSale.pdb
+C:\Vasanth\Voyager\Voyager\obj\Debug\PointOfSale_UI.csproj.CopyComplete

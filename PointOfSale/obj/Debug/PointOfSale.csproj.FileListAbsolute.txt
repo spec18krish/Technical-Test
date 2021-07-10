@@ -1,0 +1,6 @@
+C:\Vasanth\Voyager\PointOfSale\bin\Debug\PointOfSale.dll
+C:\Vasanth\Voyager\PointOfSale\bin\Debug\PointOfSale.pdb
+C:\Vasanth\Voyager\PointOfSale\obj\Debug\PointOfSale.csprojAssemblyReference.cache
+C:\Vasanth\Voyager\PointOfSale\obj\Debug\PointOfSale.csproj.CoreCompileInputs.cache
+C:\Vasanth\Voyager\PointOfSale\obj\Debug\PointOfSale.dll
+C:\Vasanth\Voyager\PointOfSale\obj\Debug\PointOfSale.pdb

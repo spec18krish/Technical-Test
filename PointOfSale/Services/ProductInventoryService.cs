@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PointOfSale
 {
-    public sealed class ProductInventoryService
+    public sealed class ProductInventoryService : IProductInventoryService
     {
         private List<Product> _products;
         private static ProductInventoryService _instance = new ProductInventoryService();
@@ -27,8 +28,9 @@ namespace PointOfSale
             }           
         }
 
-        public List<Product> Products {
-            get { return _products; }
+        public List<Product> GetAllProducts()
+        {
+            return _products;
         }
 
         public void AddProduct(string productCode, decimal unitPrice, BulkOrderDiscount discount)
@@ -43,6 +45,13 @@ namespace PointOfSale
             _products.Add(newProduct);
         }
 
+        public void UpdateProduct(string productCode, decimal unitPrice, BulkOrderDiscount discount)
+        {
+            if (string.IsNullOrWhiteSpace(productCode)) return;
+            UpdateDiscountPrice(productCode, discount);
+            UpdateProductPrice(productCode, unitPrice);           
+        }
+
         public Product GetProductByCode(string productCode)
         {
             Product product = null;
@@ -55,6 +64,10 @@ namespace PointOfSale
             return product;
         }
 
+        public void DeleteAllProducts()
+        {
+            _products.Clear();           
+        }
 
         public void UpdateProductPrice(string productCode, decimal unitPrice)
         {

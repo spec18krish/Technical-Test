@@ -42,10 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\IPointOfSaleService.cs" />
+    <Compile Include="Interface\IProductInventoryService.cs" />
     <Compile Include="Models\OrderLine.cs" />
-    <Compile Include="ProductInventoryService.cs" />
+    <Compile Include="Services\ProductInventoryService.cs" />
     <Compile Include="Models\BulkOrderDiscount.cs" />
-    <Compile Include="PointOfSaleService.cs" />
+    <Compile Include="Services\PointOfSaleService.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

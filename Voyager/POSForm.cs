@@ -1,4 +1,5 @@
 ﻿using PointOfSale;
+using PointOfSale.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Voyager
 {
-    public partial class Form1 : Form
+    public partial class POSForm : Form
     {
-        private ProductInventoryService _productInventory;
-        private PointOfSaleService _posService;
-        public Form1()
+        private IProductInventoryService _productInventory;
+        private IPointOfSaleService _posService;
+        public POSForm()
         {
             _productInventory = ProductInventoryService.Instance;
             _posService = new PointOfSaleService();
@@ -38,9 +39,15 @@ namespace Voyager
             grvScanProducts.Columns.Add(removeButtonColumn);
         }
 
+        private void LoadUpdateProductCombo()
+        {
+            var allProductCodes = _productInventory.GetAllProducts().Select(s => s.ProductCode).ToList();
+            cmbProductCode.DataSource = allProductCodes;
+        }
+
         private void LoadProducts()
         {
-            var products = _productInventory.Products;
+            var products = _productInventory.GetAllProducts();
 
             DataTable dtProducts = new DataTable("Products");
             dtProducts.Columns.Add("ProductCode", typeof(string));
@@ -103,6 +110,7 @@ namespace Voyager
             MessageBox.Show("Product Added Successfully");
             ClearAll();
             LoadProducts();
+            LoadUpdateProductCombo();
         }
 
         private void ClearAll()
@@ -126,12 +134,40 @@ namespace Voyager
 
         private void grvScanProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string productCode = grvScanProducts.Rows[e.RowIndex].Cells["ProductCode"].Value.ToString();
             if (e.ColumnIndex == grvScanProducts.Columns["Scan"].Index)
-            {
-                string productCode = grvScanProducts.Rows[e.RowIndex].Cells["ProductCode"].Value.ToString();
+            {               
                 ScanProduct(productCode);
                 LoadProducts();               
             }
+
+            if (e.ColumnIndex == grvScanProducts.Columns["Remove"].Index)
+            {
+                var product = _productInventory.GetProductByCode(productCode);
+                _posService.GetScannedProducts().Remove(product);
+                _posService.CalculateTotal();
+                LoadProducts();
+            }
+        }
+
+        private void cmbProductCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedProductCode = cmbProductCode.SelectedValue.ToString();
+            var product = _productInventory.GetProductByCode(selectedProductCode);
+            _numDrUpdateUnitPrice.Value = product.UnitPrice;
+            if (product.Discount != null)
+            {
+                _numDrUpdateBulkPrice.Value = product.Discount.DiscountedPrice;
+                _numDrUpdateBulkQuantity.Value = product.Discount.Quantity;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string selectedProductCode = cmbProductCode.SelectedValue.ToString();
+            var discount = new BulkOrderDiscount((int)_numDrUpdateBulkQuantity.Value, _numDrUpdateBulkPrice.Value);
+            _productInventory.UpdateProduct(selectedProductCode, _numDrUpdateUnitPrice.Value, discount);
+            LoadProducts();
         }
     }
 }

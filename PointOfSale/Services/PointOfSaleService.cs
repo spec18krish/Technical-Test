@@ -20,7 +20,7 @@ namespace PointOfSale
             _productInventory = ProductInventoryService.Instance;
         }
 
-        private decimal CalculateProductPrice(Product product, int noOfProduct)
+        public decimal CalculateProductPrice(Product product, int noOfProduct)
         {
             decimal discountedPrice = 0;
             if (noOfProduct == 0)
@@ -28,21 +28,18 @@ namespace PointOfSale
                 return discountedPrice;
             }
 
-            if (product?.Discount?.Quantity == 0)
+            if (product?.Discount?.Quantity == 0 || product.UnitPrice == 0)
             {
                 return product.UnitPrice * noOfProduct;
             }
 
             //finding the number of times the discount need to be applied
             decimal noOfDiscounts = noOfProduct / product.Discount.Quantity;
+            //calculating the actual total for all the products
             decimal actualPrice = noOfProduct * product.UnitPrice;
-
-            //finding the number of products eligible for the discount
-            decimal discountedproducts = noOfProduct - (noOfDiscounts * product.Discount.Quantity);
-            //calculating the total discount price
-            decimal discountPrice = ((noOfProduct - discountedproducts) * product.UnitPrice) - (noOfDiscounts * product.Discount.DiscountedPrice);
-            discountedPrice = actualPrice - discountPrice;
-            return discountedPrice;
+            //calculating the discout price
+            decimal discountPrice = (noOfDiscounts * product.Discount.Quantity * product.UnitPrice) - (noOfDiscounts * product.Discount.DiscountedPrice);
+            return actualPrice - discountPrice;
         }
 
         public decimal CalculateTotal()
@@ -78,6 +75,16 @@ namespace PointOfSale
             {
                 product.UnitPrice = price;
             }
+        }
+
+        public void ClearScannedProducts()
+        {
+            ScannedProducts.Clear();
+        }
+
+        public List<Product> GetScannedProducts()
+        {
+            return ScannedProducts;
         }
 
         public OrderLine GetScannedProductInfo(string productCode)

@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabPointOfSale = new System.Windows.Forms.TabControl();
-            this.tabAddProduct = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlPOS = new System.Windows.Forms.Panel();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.grvScanProducts = new System.Windows.Forms.DataGridView();
             this.lblAddProduct = new System.Windows.Forms.Label();
@@ -44,7 +42,6 @@
             this.lblUnitPrice = new System.Windows.Forms.Label();
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.lblProductCode = new System.Windows.Forms.Label();
-            this.tabScanProduct = new System.Windows.Forms.TabPage();
             this.lblUpdateProduct = new System.Windows.Forms.Label();
             this._numDrUpdateUnitPrice = new System.Windows.Forms.NumericUpDown();
             this._numDrUpdateBulkQuantity = new System.Windows.Forms.NumericUpDown();
@@ -56,9 +53,8 @@
             this.lblUpdateProductCode = new System.Windows.Forms.Label();
             this.cmbProductCode = new System.Windows.Forms.ComboBox();
             this.lblScanProducts = new System.Windows.Forms.Label();
-            this.tabPointOfSale.SuspendLayout();
-            this.tabAddProduct.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.lblVoyagerTechnicalTest = new System.Windows.Forms.Label();
+            this.pnlPOS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvScanProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._numDrUnitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._numDrBulkQuantity)).BeginInit();
@@ -68,69 +64,47 @@
             ((System.ComponentModel.ISupportInitialize)(this._numDrUpdateBulkPrice)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabPointOfSale
+            // pnlPOS
             // 
-            this.tabPointOfSale.Controls.Add(this.tabAddProduct);
-            this.tabPointOfSale.Controls.Add(this.tabScanProduct);
-            this.tabPointOfSale.Location = new System.Drawing.Point(16, 15);
-            this.tabPointOfSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPointOfSale.Name = "tabPointOfSale";
-            this.tabPointOfSale.SelectedIndex = 0;
-            this.tabPointOfSale.Size = new System.Drawing.Size(1559, 782);
-            this.tabPointOfSale.TabIndex = 0;
-            // 
-            // tabAddProduct
-            // 
-            this.tabAddProduct.Controls.Add(this.panel1);
-            this.tabAddProduct.Location = new System.Drawing.Point(4, 25);
-            this.tabAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAddProduct.Name = "tabAddProduct";
-            this.tabAddProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAddProduct.Size = new System.Drawing.Size(1551, 753);
-            this.tabAddProduct.TabIndex = 0;
-            this.tabAddProduct.Text = "Add Product";
-            this.tabAddProduct.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblScanProducts);
-            this.panel1.Controls.Add(this.cmbProductCode);
-            this.panel1.Controls.Add(this.lblUpdateProduct);
-            this.panel1.Controls.Add(this._numDrUpdateUnitPrice);
-            this.panel1.Controls.Add(this._numDrUpdateBulkQuantity);
-            this.panel1.Controls.Add(this._numDrUpdateBulkPrice);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.lblUpdateBulkQuantity);
-            this.panel1.Controls.Add(this.lblUpdateBulkPrice);
-            this.panel1.Controls.Add(this.lblUpdateUnitPrice);
-            this.panel1.Controls.Add(this.lblUpdateProductCode);
-            this.panel1.Controls.Add(this.lblTotalPrice);
-            this.panel1.Controls.Add(this.grvScanProducts);
-            this.panel1.Controls.Add(this.lblAddProduct);
-            this.panel1.Controls.Add(this._numDrUnitPrice);
-            this.panel1.Controls.Add(this._numDrBulkQuantity);
-            this.panel1.Controls.Add(this._numDrBulkPrice);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.lblBulkPrice);
-            this.panel1.Controls.Add(this.lblBulkQuantity);
-            this.panel1.Controls.Add(this.lblUnitPrice);
-            this.panel1.Controls.Add(this.txtProductCode);
-            this.panel1.Controls.Add(this.lblProductCode);
-            this.panel1.Location = new System.Drawing.Point(8, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1472, 713);
-            this.panel1.TabIndex = 0;
+            this.pnlPOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPOS.Controls.Add(this.lblScanProducts);
+            this.pnlPOS.Controls.Add(this.cmbProductCode);
+            this.pnlPOS.Controls.Add(this.lblUpdateProduct);
+            this.pnlPOS.Controls.Add(this._numDrUpdateUnitPrice);
+            this.pnlPOS.Controls.Add(this._numDrUpdateBulkQuantity);
+            this.pnlPOS.Controls.Add(this._numDrUpdateBulkPrice);
+            this.pnlPOS.Controls.Add(this.btnUpdate);
+            this.pnlPOS.Controls.Add(this.lblUpdateBulkQuantity);
+            this.pnlPOS.Controls.Add(this.lblUpdateBulkPrice);
+            this.pnlPOS.Controls.Add(this.lblUpdateUnitPrice);
+            this.pnlPOS.Controls.Add(this.lblUpdateProductCode);
+            this.pnlPOS.Controls.Add(this.lblTotalPrice);
+            this.pnlPOS.Controls.Add(this.grvScanProducts);
+            this.pnlPOS.Controls.Add(this.lblAddProduct);
+            this.pnlPOS.Controls.Add(this._numDrUnitPrice);
+            this.pnlPOS.Controls.Add(this._numDrBulkQuantity);
+            this.pnlPOS.Controls.Add(this._numDrBulkPrice);
+            this.pnlPOS.Controls.Add(this.btnCancel);
+            this.pnlPOS.Controls.Add(this.btnAdd);
+            this.pnlPOS.Controls.Add(this.lblBulkPrice);
+            this.pnlPOS.Controls.Add(this.lblBulkQuantity);
+            this.pnlPOS.Controls.Add(this.lblUnitPrice);
+            this.pnlPOS.Controls.Add(this.txtProductCode);
+            this.pnlPOS.Controls.Add(this.lblProductCode);
+            this.pnlPOS.Location = new System.Drawing.Point(51, 90);
+            this.pnlPOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPOS.Name = "pnlPOS";
+            this.pnlPOS.Size = new System.Drawing.Size(1472, 713);
+            this.pnlPOS.TabIndex = 0;
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.Location = new System.Drawing.Point(1084, 370);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(148, 29);
+            this.lblTotalPrice.Size = new System.Drawing.Size(154, 31);
             this.lblTotalPrice.TabIndex = 15;
             this.lblTotalPrice.Text = "Total Price:";
             // 
@@ -149,11 +123,11 @@
             // lblAddProduct
             // 
             this.lblAddProduct.AutoSize = true;
-            this.lblAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddProduct.Location = new System.Drawing.Point(128, 38);
             this.lblAddProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddProduct.Name = "lblAddProduct";
-            this.lblAddProduct.Size = new System.Drawing.Size(156, 29);
+            this.lblAddProduct.Size = new System.Drawing.Size(164, 31);
             this.lblAddProduct.TabIndex = 13;
             this.lblAddProduct.Text = "Add Product";
             // 
@@ -253,25 +227,14 @@
             this.lblProductCode.TabIndex = 0;
             this.lblProductCode.Text = "Product Code:";
             // 
-            // tabScanProduct
-            // 
-            this.tabScanProduct.Location = new System.Drawing.Point(4, 25);
-            this.tabScanProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabScanProduct.Name = "tabScanProduct";
-            this.tabScanProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabScanProduct.Size = new System.Drawing.Size(1551, 753);
-            this.tabScanProduct.TabIndex = 1;
-            this.tabScanProduct.Text = "Scan Product";
-            this.tabScanProduct.UseVisualStyleBackColor = true;
-            // 
             // lblUpdateProduct
             // 
             this.lblUpdateProduct.AutoSize = true;
-            this.lblUpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateProduct.Location = new System.Drawing.Point(92, 392);
             this.lblUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpdateProduct.Name = "lblUpdateProduct";
-            this.lblUpdateProduct.Size = new System.Drawing.Size(194, 29);
+            this.lblUpdateProduct.Size = new System.Drawing.Size(201, 31);
             this.lblUpdateProduct.TabIndex = 26;
             this.lblUpdateProduct.Text = "Update Product";
             // 
@@ -364,27 +327,37 @@
             // lblScanProducts
             // 
             this.lblScanProducts.AutoSize = true;
-            this.lblScanProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScanProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScanProducts.Location = new System.Drawing.Point(788, 38);
             this.lblScanProducts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScanProducts.Name = "lblScanProducts";
-            this.lblScanProducts.Size = new System.Drawing.Size(226, 36);
+            this.lblScanProducts.Size = new System.Drawing.Size(191, 31);
             this.lblScanProducts.TabIndex = 28;
             this.lblScanProducts.Text = "Scan Products";
+            // 
+            // lblVoyagerTechnicalTest
+            // 
+            this.lblVoyagerTechnicalTest.AutoSize = true;
+            this.lblVoyagerTechnicalTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoyagerTechnicalTest.Location = new System.Drawing.Point(746, 35);
+            this.lblVoyagerTechnicalTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVoyagerTechnicalTest.Name = "lblVoyagerTechnicalTest";
+            this.lblVoyagerTechnicalTest.Size = new System.Drawing.Size(303, 31);
+            this.lblVoyagerTechnicalTest.TabIndex = 29;
+            this.lblVoyagerTechnicalTest.Text = "Voyager Technical Test";
             // 
             // POSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1680, 847);
-            this.Controls.Add(this.tabPointOfSale);
+            this.ClientSize = new System.Drawing.Size(1680, 855);
+            this.Controls.Add(this.lblVoyagerTechnicalTest);
+            this.Controls.Add(this.pnlPOS);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "POSForm";
             this.Text = "Point of Sale";
-            this.tabPointOfSale.ResumeLayout(false);
-            this.tabAddProduct.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlPOS.ResumeLayout(false);
+            this.pnlPOS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvScanProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._numDrUnitPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._numDrBulkQuantity)).EndInit();
@@ -393,15 +366,12 @@
             ((System.ComponentModel.ISupportInitialize)(this._numDrUpdateBulkQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._numDrUpdateBulkPrice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabPointOfSale;
-        private System.Windows.Forms.TabPage tabAddProduct;
-        private System.Windows.Forms.TabPage tabScanProduct;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlPOS;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblBulkPrice;
@@ -426,6 +396,7 @@
         private System.Windows.Forms.Label lblUpdateProductCode;
         private System.Windows.Forms.ComboBox cmbProductCode;
         private System.Windows.Forms.Label lblScanProducts;
+        private System.Windows.Forms.Label lblVoyagerTechnicalTest;
     }
 }
 

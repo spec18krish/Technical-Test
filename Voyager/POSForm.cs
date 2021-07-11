@@ -29,12 +29,14 @@ namespace Voyager
             var scanButtonColumn = new DataGridViewButtonColumn();
             scanButtonColumn.Name = "Scan";
             scanButtonColumn.Text = "Scan";
+            scanButtonColumn.ToolTipText = "Click to scan the product";
             scanButtonColumn.UseColumnTextForButtonValue = true;
             grvScanProducts.Columns.Add(scanButtonColumn);
 
             var removeButtonColumn = new DataGridViewButtonColumn();
             removeButtonColumn.Name = "Remove";
             removeButtonColumn.Text = "Remove";
+            scanButtonColumn.ToolTipText = "Click to remove the scaned product";
             removeButtonColumn.UseColumnTextForButtonValue = true;
             grvScanProducts.Columns.Add(removeButtonColumn);
         }
@@ -63,7 +65,7 @@ namespace Voyager
                 dr["ProductCode"] = product.ProductCode;
                 dr["UnitPrice"] = product.UnitPrice;
                 dr["BulkPrice"] = product.Discount.Quantity != 0 ?
-                                         $"{product.Discount.DiscountedPrice} for {product.Discount.Quantity}" :
+                                         $"${product.Discount.DiscountedPrice} for {product.Discount.Quantity} Items" :
                                          string.Empty;
                 if (scannedProductInfo != null)
                 {
